@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+    <title>Minergate Mining Deployer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+	  <form id="minergate-form" action="miner-deploy.php" method="get" class="form-horizontal">
+	<fieldset>
+
+	<!-- Form Name -->
+	<legend>Minergate Deployer</legend>
+
+	<!-- Select Basic -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="os">Operating System</label>
+	  <div class="col-md-4">
+	    <select id="os" name="os" class="form-control">
+	      <option value="ubuntu">ubuntu</option>
+	      <option value="centos">centos</option>
+	    </select>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="hostname">Server IP/Hostname</label>  
+	  <div class="col-md-4">
+	  <input id="hostname" name="hostname" placeholder="" class="form-control input-md" required="" type="text">
+	  <span class="help-block">Enter the Server IP/Hostname</span>  
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="port">Port</label>  
+	  <div class="col-md-4">
+	  <input id="port" name="port" placeholder="22" class="form-control input-md" required="" type="text">
+	  <span class="help-block">SSH Port that is accessible in public</span>  
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="username">Username</label>  
+	  <div class="col-md-4">
+	  <input id="username" name="username" placeholder="root" class="form-control input-md" required="" type="text">
+	  <span class="help-block">User with sudo access</span>  
+	  </div>
+	</div>
+
+	<!-- Password input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="password">Password</label>
+	  <div class="col-md-4">
+	    <input id="password" name="password" placeholder="" class="form-control input-md" required="" type="password">
+	    <span class="help-block">Password for the above user</span>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="minergateemail">Minergate Email</label>  
+	  <div class="col-md-4">
+	  <input id="minergateemail" name="minergateemail" placeholder="" class="form-control input-md" required="" type="text">
+	  <span class="help-block">Minergate Account email</span>  
+	  </div>
+	</div>
+
+	<!-- Select Multiple -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="selectmultiple">Mining pair</label>
+	  <div class="col-md-4">
+	    <select id="currency" name="currency" class="form-control" multiple="multiple">
+	      <option value="bcn">bcn</option>
+	      <option value="xmr">xmr</option>
+	      <option value="xdn">xdn</option>
+	      <option value="qcn">qcn</option>
+	      <option value="fcn">fcn</option>
+	      <option value="mcn">mcn</option>
+	      <option value="aeon">aeon</option>
+	      <option value="dsh">dsh</option>
+	      <option value="inf8">inf8</option>
+	      <option value="fcn+xmr">fcn+xmr</option>
+	      <option value="fcn+qcn">fcn+qcn</option>
+	      <option value="fcn+dsh">fcn+dsh</option>
+	      <option value="fcn+inf8">fcn+inf8</option>
+	      <option value="mcn+qcn">mcn+qcn</option>
+	      <option value="mcn+dsh">mcn+dsh</option>
+	      <option value="mcn+inf8">mcn+inf8</option>
+	    </select>
+	  </div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="deploy"></label>
+	  <div class="col-md-8">
+	    <button id="deploy" name="deploy" class="btn btn-success">Deploy</button>
+	  </div>
+	</div>
+
+	</fieldset>
+	</form>
+  </body>
+</html>
