@@ -27,5 +27,8 @@ elif [ $OS = "centos" ]
 then
     SCRIPT=$SCENTOS
 fi
-
-sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no -l ${USERNAME} -p ${PORT} ${HOSTNAME} "${SCRIPT}"
+#whoami
+#echo ${SCRIPT}
+#OUTPUT="$(sudo sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no -l ${USERNAME} -p ${PORT} ${HOSTNAME} '${SCRIPT}' 2>&1)"
+#echo "${OUTPUT}"
+sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no -l ${USERNAME} -p ${PORT} ${HOSTNAME} "${SCRIPT}" 2>&1

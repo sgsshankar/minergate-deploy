@@ -1,8 +1,8 @@
 <?php
 
-
-if (isset($_GET['deploy']))
+if(isset($_GET['deploy']))
 	{
+	//echo "hi";
 	$os = $_GET['os'];
 	$hostname = $_GET['hostname'];
   $port = $_GET['port'];
@@ -10,9 +10,12 @@ if (isset($_GET['deploy']))
   $password = $_GET['password'];
   $minergateemail = $_GET['minergateemail'];
   $currency = $_GET['currency'];
-
-	$output = shell_exec("./miner-deploy.sh '".$os."' '".$hostname."' '".$port."' '".$username."' '".$password."' '".$minergateemail."' '".$currency."'");
+	
+	$command = ("./miner-deploy.sh '".$os."' '".$hostname."' '".$port."' '".$username."' '".$password."' '".$minergateemail."' '".$currency."'");
+	//echo $command;
+	$output = exec($command);
   echo "<pre>$output</pre>";
+
 	exit;
 	}
 
